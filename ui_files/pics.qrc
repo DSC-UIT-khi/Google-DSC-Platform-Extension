@@ -1,0 +1,9 @@
+<RCC>
+  <qresource prefix="newPrefix">
+    <file>assets/gg.png</file>
+    <file>assets/eg.jpg</file>
+    <file>assets/dsc-uit---karachi-logo-x1 (1).png</file>
+    <file>assets/Octocat.png</file>
+    <file>assets/person.png</file>
+  </qresource>
+</RCC>

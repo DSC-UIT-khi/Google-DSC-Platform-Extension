@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>611</width>
+    <height>591</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>611</width>
+    <height>591</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>611</width>
+    <height>591</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QFrame" name="main_frame">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>611</width>
+      <height>591</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">#main_frame{
+background-color: rgb(66,133,244);
+}</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+    <widget class="QFrame" name="choose_frame">
+     <property name="geometry">
+      <rect>
+       <x>80</x>
+       <y>180</y>
+       <width>451</width>
+       <height>301</height>
+      </rect>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>8</width>
+       <height>0</height>
+      </size>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">#choose_frame{
+background-color: rgb(244,180,0);
+border-radius:15px;
+}</string>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <widget class="QLabel" name="choose_label">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>40</y>
+        <width>81</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">#choose_label
+{
+	
+	
+	font: 57 14pt &quot;Google Sans&quot;;
+}</string>
+      </property>
+      <property name="text">
+       <string>Email:</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="login_btn">
+      <property name="geometry">
+       <rect>
+        <x>260</x>
+        <y>230</y>
+        <width>93</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">#login_btn{
+background-color: rgb(255,255,255);
+	font: 57 10pt &quot;Google Sans&quot;;
+border-radius:7px;
+}
+#login_btn:hover{
+background-color:rgb(219,68,55);
+
+	color: rgb(255, 255, 255);
+}
+
+</string>
+      </property>
+      <property name="text">
+       <string>Login</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineEdit">
+      <property name="geometry">
+       <rect>
+        <x>200</x>
+        <y>50</y>
+        <width>221</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border-radius:9px;</string>
+      </property>
+      <property name="placeholderText">
+       <string> Enter Email</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineEdit_2">
+      <property name="geometry">
+       <rect>
+        <x>200</x>
+        <y>110</y>
+        <width>221</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border-radius:9px;</string>
+      </property>
+      <property name="echoMode">
+       <enum>QLineEdit::Password</enum>
+      </property>
+      <property name="placeholderText">
+       <string> Enter Password</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="pass_label">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>100</y>
+        <width>121</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">#pass_label
+{
+	
+	
+	font: 57 14pt &quot;Google Sans&quot;;
+}</string>
+      </property>
+      <property name="text">
+       <string>Password:</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="uni_label">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>170</y>
+        <width>151</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">#uni_label
+{
+	
+	
+	font: 57 11pt &quot;Google Sans&quot;;
+}</string>
+      </property>
+      <property name="text">
+       <string>Uni_platform_Link:</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineEdit_3">
+      <property name="geometry">
+       <rect>
+        <x>200</x>
+        <y>160</y>
+        <width>221</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border-radius:9px;</string>
+      </property>
+      <property name="placeholderText">
+       <string> https://dsc.community.dev/usman-institute-of-technology/</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QLabel" name="logo_label">
+     <property name="geometry">
+      <rect>
+       <x>100</x>
+       <y>60</y>
+       <width>421</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">#logo_label{
+	
+    
+	
+	
+	background-image: url(:/newPrefix/assets/dsc-uit---karachi-logo-x1 (1).png);
+	background-color: rgb(255, 255, 255,40);
+	border-radius:15px;
+}
+</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QLabel" name="dev_label">
+     <property name="geometry">
+      <rect>
+       <x>240</x>
+       <y>20</y>
+       <width>151</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">#dev_label{	
+	
+	font: 75 14pt &quot;Google Sans&quot;;
+
+}</string>
+     </property>
+     <property name="text">
+      <string>Developed By</string>
+     </property>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>611</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuDeveloped_By">
+    <property name="title">
+     <string>Developed By</string>
+    </property>
+    <addaction name="actionRaheel_Siddiqui"/>
+   </widget>
+   <widget class="QMenu" name="menuWarnings">
+    <property name="title">
+     <string>Help</string>
+    </property>
+    <addaction name="actionWarnings"/>
+    <addaction name="actionGitHub_Code"/>
+    <addaction name="actionGet_the_Software"/>
+   </widget>
+   <addaction name="menuDeveloped_By"/>
+   <addaction name="menuWarnings"/>
+  </widget>
+  <action name="actionRaheel_Siddiqui">
+   <property name="icon">
+    <iconset resource="pics.qrc">
+     <normaloff>:/newPrefix/assets/person.png</normaloff>:/newPrefix/assets/person.png</iconset>
+   </property>
+   <property name="text">
+    <string>Raheel Siddiqui</string>
+   </property>
+  </action>
+  <action name="actionWarnings">
+   <property name="icon">
+    <iconset resource="pics.qrc">
+     <normaloff>:/newPrefix/assets/gg.png</normaloff>:/newPrefix/assets/gg.png</iconset>
+   </property>
+   <property name="text">
+    <string>Warnings!</string>
+   </property>
+  </action>
+  <action name="actionGitHub_Code">
+   <property name="icon">
+    <iconset resource="pics.qrc">
+     <normaloff>:/newPrefix/assets/Octocat.png</normaloff>:/newPrefix/assets/Octocat.png</iconset>
+   </property>
+   <property name="text">
+    <string>GitHub Code</string>
+   </property>
+  </action>
+  <action name="actionGet_the_Software">
+   <property name="icon">
+    <iconset resource="pics.qrc">
+     <normaloff>:/newPrefix/assets/gg.png</normaloff>:/newPrefix/assets/gg.png</iconset>
+   </property>
+   <property name="text">
+    <string>Get the Software</string>
+   </property>
+  </action>
+ </widget>
+ <resources>
+  <include location="pics.qrc"/>
+ </resources>
+ <connections/>
+</ui>
