@@ -1,6 +1,8 @@
 # DSC-Platform-Extension
-Find Youtube Tutorial at
+Find **Youtube** Tutorial at
 https://www.youtube.com/watch?v=HOi1MoDM1Uk&feature=youtu.be
+## Screenshots
+![](screenshots/login.jpg) ![](screenshots/main_window.jpg)
 
 ### Installation
 1) **Install Python** from https://www.python.org/downloads/
@@ -11,3 +13,6 @@ pip install -r requirements.txt
 ```
 3) Run **DPE.sh** file by double clicking it
 ### You are ready to go!
+
+Find **Youtube** Tutorial at
+https://www.youtube.com/watch?v=HOi1MoDM1Uk&feature=youtu.be
