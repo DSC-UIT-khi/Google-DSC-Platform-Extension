@@ -12,6 +12,8 @@ pip install -r requirements.txt
 ### You are ready to go!
 The extension is developed by [Raheel Siddiqui](https://github.com/rawheel) with :heart:
 
+The extension is developed by [Raheel Siddiqui](https://github.com/rawheel) with :heart:
+
 ## Screenshots
 ![](screenshots/login.jpg) 
 ![](screenshots/main_window.jpg)
