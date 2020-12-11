@@ -10,9 +10,7 @@ pip install -r requirements.txt
 ```
 3) Run **DPE.sh** file by double clicking it
 ### You are ready to go!
-
-Find **Youtube** Tutorial at
-https://www.youtube.com/watch?v=HOi1MoDM1Uk&feature=youtu.be
+The extension is developed by [Raheel Siddiqui](https://github.com/rawheel) with :heart:
 
 ## Screenshots
 ![](screenshots/login.jpg) 
