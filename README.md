@@ -15,3 +15,7 @@ The extension is developed by [Raheel Siddiqui](https://github.com/rawheel) with
 ## Screenshots
 ![](screenshots/login.jpg) 
 ![](screenshots/main_window.jpg)
+
+### Limitations
+1) It is assumed that an account having extension other than gmail is being used. (e.g XXXX@student.uet.edu.pk)
+2) Only a person with Lead role is able to add the CSV file to event.
