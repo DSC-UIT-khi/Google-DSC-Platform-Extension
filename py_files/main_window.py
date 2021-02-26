@@ -243,15 +243,15 @@ class Ui_MainWindow(object):
             check = 0
             if self.show_check.isChecked():
                 check = 1
-            comb_text = str(self.comboBox.currentText())
-            print(comb_text)
+            event_sel = str(self.comboBox.currentText())
+            print(event_sel)
 
         info = (open("py_files/secret_info.txt","r").read()).split(' ')
         email =info[0]
         pas = info[2]
         uni_link=info[3]
 
-        data = pd.read_csv(self.path_csv)
+        data = pd.read_csv(self.path_csv, encoding = "ISO-8859-1")
         arr =np.array(data.columns)
         column = [i.lower() for i in arr]
         data.columns = column
@@ -263,16 +263,49 @@ class Ui_MainWindow(object):
             data.sort_values("email", inplace = True)
 
             data.drop_duplicates(subset ="email", keep = "first", inplace = True)
+            lower_limit = 0
+            upper_limit= 70
+            count = 1
+            print(len(data))
             
 
-            f_name = data["first name"]
+            def run_bot(f_name,l_name,eemail,event_sel,uni_link,email,pas):
+                obj = dsc_bot()
+                obj.login(uni_link,email,pas)
+                obj.start(f_name,l_name,eemail,event_sel)
+            while True:
+
+                f_name = data["first name"][lower_limit:upper_limit]
+                l_name = data["last name"][lower_limit:upper_limit]
+                eemail = data["email"][lower_limit:upper_limit]
+                
+                lower_limit = upper_limit
+                upper_limit+=70
+                
+                if len(f_name) ==0:
+                    break
+                else:
+                    import threading
+                    import time
+                    t1 = threading.Thread(target = run_bot,args = [f_name,l_name,eemail,event_sel,uni_link,email,pas])
+                    t1.start()
+                    time.sleep(2)
+
+
+                    #run_bot(f_name,l_name,eemail,event_sel,uni_link,email,pas)
+
+                
+            '''f_name = data["first name"]
             l_name = data["last name"]
             eemail = data["email"]
+            print(len(f_name),len(l_name),len(eemail))
+
             obj = dsc_bot()
             obj.login(uni_link,email,pas)
-            obj.start(f_name,l_name,eemail,comb_text)
+            obj.start(f_name,l_name,eemail,event_sel)'''
 
-        except:
+        except Exception as e:
+            print(e)
             self.message("Make Sure .csv file has columns (First Name, Last Name,Email)")
 
 

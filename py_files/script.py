@@ -22,30 +22,39 @@ class dsc_bot:
 	def login(self,uni_link,email,pas):
 		bot = self.bot
 
-		bot.get(uni_link)
+		bot.get('https://dsc.community.dev/accounts/dashboard/')
 		time.sleep(2)
-		login_btn = bot.find_element_by_xpath("/html/body/header/div[1]/div/div[2]/ul/li[5]/a")
-		login_btn.click()
-		time.sleep(2)
+		'''try:
+			login_btn = bot.find_element_by_xpath("/html/body/header/div[1]/div/div[2]/ul/li[5]/a")
+			login_btn.click()
+		except:
+			pass
+		time.sleep(2)'''
 
 		email_in = bot.find_element_by_xpath("/html/body/div[1]/div[1]/div[2]/div/div[2]/div/div/div[2]/div/div[1]/div/form/span/section/div/div/div[1]/div/div[1]/div/div[1]/input")
 		email_in.send_keys(email)
 		nxt_btn = bot.find_element_by_xpath("/html/body/div[1]/div[1]/div[2]/div/div[2]/div/div/div[2]/div/div[2]/div/div[1]/div/div/button/div[2]")
 		nxt_btn.click()
-		time.sleep(2)
+		#keyboard.send('enter', do_press=True, do_release=True)
+		time.sleep(4)
 		pas_in = bot.find_element_by_xpath("/html/body/div[1]/div[1]/div[2]/div/div[2]/div/div/div[2]/div/div[1]/div/form/span/section/div/div/div[1]/div[1]/div/div/div/div/div[1]/div/div[1]/input")
 		pas_in.send_keys(pas)
 		nxt1_btn = bot.find_element_by_xpath("/html/body/div[1]/div[1]/div[2]/div/div[2]/div/div/div[2]/div/div[2]/div/div[1]/div/div/button/div[2]")
 		nxt1_btn.click()
+		#keyboard.send('enter', do_press=True, do_release=True)
 		time.sleep(4)
 	def start(self,f_name,l_name,eemail,event_sel):
 		bot = self.bot
-		dash_btn = bot.find_element_by_xpath("/html/body/nav/div/div[2]/ul/li[6]/a")
-		dash_btn.click()
+		bot.get('https://dsc.community.dev/accounts/dashboard/')
+		#dash_btn = bot.find_element_by_xpath("/html/body/nav/div/div[2]/ul/li[6]/a")
+		#dash_btn.click()
 		time.sleep(20)
+		bot.get('https://dsc.community.dev/accounts/dashboard/#/chapter-194/event-8554/manage')
+		time.sleep(3)
 		try:
 
-			if event_sel == "Completed":
+
+			'''if event_sel == "Completed":
 
 
 				comp_btn = bot.find_element_by_xpath("/html/body/div[1]/div/div/div/div[3]/div/div/div/div/div/div[1]/div[1]/div/div/div[2]/div/div[3]")
@@ -63,8 +72,12 @@ class dsc_bot:
 
 			evnt_btn = bot.find_element_by_xpath("/html/body/div[1]/div/div/div/div[3]/div/div/div/div/div/div[2]/div/div/div[2]")
 			evnt_btn.click()
-			time.sleep(2)
+
+			time.sleep(2)'''
 			count = 1
+
+
+			
 			for f_name,l_name,eemail in zip(f_name,l_name,eemail):
 				#print(name)
 				
@@ -106,9 +119,12 @@ class dsc_bot:
 				#add_att.click()
 				time.sleep(2)
 				count +=1
+
+				
 			save_btn =bot.find_element_by_xpath("/html/body/div[1]/div/div/div/div[3]/div/div/div/div/div/div[2]/div/div/div[2]/div/div[1]/button")
 			save_btn.click()
 			time.sleep(2)
+
 		except:
 			self.message(f'Check Internet Connection or if there is event created in {event_sel}')
 
