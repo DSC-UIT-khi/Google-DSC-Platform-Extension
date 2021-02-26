@@ -15,6 +15,9 @@ from PyQt5.QtWidgets import QMessageBox
 from script import dsc_bot
 import pandas as pd
 import numpy as np
+import threading
+import time
+
 class Ui_MainWindow(object):
     def warnings_window(self):
         from warnings_window import  Ui_MainWindow
@@ -285,8 +288,7 @@ class Ui_MainWindow(object):
                 if len(f_name) ==0:
                     break
                 else:
-                    import threading
-                    import time
+                    
                     t1 = threading.Thread(target = run_bot,args = [f_name,l_name,eemail,event_sel,uni_link,email,pas])
                     t1.start()
                     time.sleep(2)
@@ -305,7 +307,7 @@ class Ui_MainWindow(object):
             obj.start(f_name,l_name,eemail,event_sel)'''
 
         except Exception as e:
-            print(e)
+            print(e,"hello")
             self.message("Make Sure .csv file has columns (First Name, Last Name,Email)")
 
 
