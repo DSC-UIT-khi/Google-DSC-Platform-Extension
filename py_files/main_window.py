@@ -270,44 +270,49 @@ class Ui_MainWindow(object):
             upper_limit= 70
             count = 1
             print(len(data))
-            
+            if len(data) < 400:
 
-            def run_bot(f_name,l_name,eemail,event_sel,uni_link,email,pas):
+                
+                
+
+                def run_bot(f_name,l_name,eemail,event_sel,uni_link,email,pas):
+                    obj = dsc_bot()
+                    obj.login(uni_link,email,pas)
+                    obj.start(f_name,l_name,eemail,event_sel)
+                while True:
+
+                    f_name = data["first name"][lower_limit:upper_limit]
+                    l_name = data["last name"][lower_limit:upper_limit]
+                    eemail = data["email"][lower_limit:upper_limit]
+                    
+                    lower_limit = upper_limit
+                    upper_limit+=70
+                    
+                    if len(f_name) ==0:
+                        break
+                    else:
+                        
+                        t1 = threading.Thread(target = run_bot,args = [f_name,l_name,eemail,event_sel,uni_link,email,pas])
+                        t1.start()
+                        time.sleep(2)
+
+
+                        #run_bot(f_name,l_name,eemail,event_sel,uni_link,email,pas)
+
+                    
+                '''f_name = data["first name"]
+                l_name = data["last name"]
+                eemail = data["email"]
+                print(len(f_name),len(l_name),len(eemail))
+
                 obj = dsc_bot()
                 obj.login(uni_link,email,pas)
-                obj.start(f_name,l_name,eemail,event_sel)
-            while True:
-
-                f_name = data["first name"][lower_limit:upper_limit]
-                l_name = data["last name"][lower_limit:upper_limit]
-                eemail = data["email"][lower_limit:upper_limit]
-                
-                lower_limit = upper_limit
-                upper_limit+=70
-                
-                if len(f_name) ==0:
-                    break
-                else:
-                    
-                    t1 = threading.Thread(target = run_bot,args = [f_name,l_name,eemail,event_sel,uni_link,email,pas])
-                    t1.start()
-                    time.sleep(2)
-
-
-                    #run_bot(f_name,l_name,eemail,event_sel,uni_link,email,pas)
-
-                
-            '''f_name = data["first name"]
-            l_name = data["last name"]
-            eemail = data["email"]
-            print(len(f_name),len(l_name),len(eemail))
-
-            obj = dsc_bot()
-            obj.login(uni_link,email,pas)
-            obj.start(f_name,l_name,eemail,event_sel)'''
+                obj.start(f_name,l_name,eemail,event_sel)'''
+            else:
+                self.message("Make sure your data length is less than 400!")
 
         except Exception as e:
-            print(e,"hello")
+            print(e,"report this error to GitHub repo")
             self.message("Make Sure .csv file has columns (First Name, Last Name,Email)")
 
 

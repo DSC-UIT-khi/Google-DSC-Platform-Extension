@@ -45,7 +45,7 @@ class dsc_bot:
 		time.sleep(4)
 	def start(self,f_name,l_name,eemail,event_sel):
 		bot = self.bot
-		bot.get('https://dsc.community.dev/accounts/dashboard/')
+		bot.get('https://dsc.community.dev/accounts/dashboard/#/chapter-194/event-8554/manage')
 		#dash_btn = bot.find_element_by_xpath("/html/body/nav/div/div[2]/ul/li[6]/a")
 		#dash_btn.click()
 		time.sleep(20)
