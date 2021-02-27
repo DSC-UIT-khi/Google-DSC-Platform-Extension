@@ -1,4 +1,8 @@
-# DSC-Platform-Extension
+# Google DSC Platform Extension - Version 2.0
+## changes
+### 1) Now you can add attendees by giving event link as an input no need to select (Live,Draft,Completed)
+### 2) The whole process is super fast now, It is using multithreading so It will divide your attendees and add them using multiple chrome windows.
+
 Find **Youtube** Tutorial at
 https://www.youtube.com/watch?v=HOi1MoDM1Uk&feature=youtu.be
 ### Installation
