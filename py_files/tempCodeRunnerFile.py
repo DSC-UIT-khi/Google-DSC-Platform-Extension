@@ -1,0 +1,1 @@
+G:\University\Developers Student Club\Fast track Datascience\all data

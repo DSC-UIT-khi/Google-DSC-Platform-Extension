@@ -9,7 +9,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtWidgets import QMessageBox
 class dsc_bot:
 	def __init__(self):
-		self.bot = webdriver.Chrome("chromedriver.exe")
+		self.bot = webdriver.Chrome(executable_path=r'chromedriver.exe')
 
 	def message(self,message):
 
@@ -45,41 +45,28 @@ class dsc_bot:
 		time.sleep(4)
 	def start(self,f_name,l_name,eemail,event_sel):
 		bot = self.bot
-		bot.get('https://dsc.community.dev/accounts/dashboard/#/chapter-194/event-8554/manage')
-		#dash_btn = bot.find_element_by_xpath("/html/body/nav/div/div[2]/ul/li[6]/a")
+		#bot.get('https://dsc.community.dev/accounts/dashboard/#/chapter-194/event-8554/manage')
+		bot.get(event_sel)
+		#dash_btn = bot.find_element_by_xpath("/html/body/nav/div/div[2]/ul /li[6]/a")
 		#dash_btn.click()
-		time.sleep(20)
-		bot.get('https://dsc.community.dev/accounts/dashboard/#/chapter-194/event-8554/manage')
-		time.sleep(3)
+		#time.sleep(7)
+		#bot.get('https://dsc.community.dev/accounts/dashboard/#/chapter-194/event-8554/manage')
+		bot.get('https://dsc.community.dev/accounts/dashboard/')
+		time.sleep(1)
+		print('running')
+		bot.get(event_sel)
+		#bot.get(event_sel)
+		#time.sleep(7)
 		try:
-
-
-			'''if event_sel == "Completed":
-
-
-				comp_btn = bot.find_element_by_xpath("/html/body/div[1]/div/div/div/div[3]/div/div/div/div/div/div[1]/div[1]/div/div/div[2]/div/div[3]")
-				comp_btn.click()
-
-			elif event_sel == "Draft":
-				drft_btn = bot.find_element_by_xpath("/html/body/div[1]/div/div/div/div[3]/div/div/div/div/div/div[1]/div[1]/div/div/div[2]/div/div[2]")
-				drft_btn.click()
-			else:
-				pass
-
-
-			time.sleep(2)
-
-
-			evnt_btn = bot.find_element_by_xpath("/html/body/div[1]/div/div/div/div[3]/div/div/div/div/div/div[2]/div/div/div[2]")
-			evnt_btn.click()
-
-			time.sleep(2)'''
+			
 			count = 1
 
 
 			
 			for f_name,l_name,eemail in zip(f_name,l_name,eemail):
 				#print(name)
+				print(f_name,"fname")
+
 				
 				add_btn = bot.find_element_by_xpath("/html/body/div[1]/div/div/div/div[3]/div/div/div/div/div/div[2]/div/div/div[2]/div/div[1]/div/div/a")
 				add_btn.click()
@@ -126,7 +113,8 @@ class dsc_bot:
 			time.sleep(2)
 
 		except:
-			self.message(f'Check Internet Connection or if there is event created in {event_sel}')
+			
+			self.message(f'Check Internet Connection or if there is event created at {event_sel}')
 
 	def draft(self):
 		drft_btn = bot.find_element_by_xpath("/html/body/div[1]/div/div/div/div[3]/div/div/div/div/div/div[1]/div[1]/div/div/div[2]/div/div[2]")

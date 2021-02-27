@@ -161,51 +161,8 @@ background-color:rgb(219,68,55);
 }</string>
       </property>
       <property name="text">
-       <string>Event Status:</string>
+       <string>Event Link:</string>
       </property>
-     </widget>
-     <widget class="QComboBox" name="comboBox">
-      <property name="geometry">
-       <rect>
-        <x>220</x>
-        <y>190</y>
-        <width>221</width>
-        <height>31</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">#comboBox{	
-	background-color: rgb(255, 255, 255);
-	font: 57 14pt &quot;Google Sans&quot;;
-}</string>
-      </property>
-      <item>
-       <property name="text">
-        <string>Live</string>
-       </property>
-       <property name="icon">
-        <iconset resource="pics.qrc">
-         <normaloff>:/newPrefix/assets/gg.png</normaloff>:/newPrefix/assets/gg.png</iconset>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>Draft</string>
-       </property>
-       <property name="icon">
-        <iconset resource="pics.qrc">
-         <normaloff>:/newPrefix/assets/gg.png</normaloff>:/newPrefix/assets/gg.png</iconset>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>Completed</string>
-       </property>
-       <property name="icon">
-        <iconset resource="pics.qrc">
-         <normaloff>:/newPrefix/assets/gg.png</normaloff>:/newPrefix/assets/gg.png</iconset>
-       </property>
-      </item>
      </widget>
      <widget class="QPushButton" name="start_btn">
       <property name="geometry">
@@ -234,23 +191,20 @@ background-color:rgb(219,68,55);
        <string>Start</string>
       </property>
      </widget>
-     <widget class="QCheckBox" name="show_check">
+     <widget class="QLineEdit" name="lineEdit_2">
       <property name="geometry">
        <rect>
-        <x>270</x>
-        <y>230</y>
-        <width>121</width>
+        <x>220</x>
+        <y>180</y>
+        <width>221</width>
         <height>41</height>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">#show_check{	
-	font: 57 8pt &quot;Google Sans&quot;;
-
-}</string>
+       <string notr="true">font: 9pt &quot;MS Shell Dlg 2&quot;;</string>
       </property>
-      <property name="text">
-       <string>Show Chrome</string>
+      <property name="placeholderText">
+       <string>Enter Event Link</string>
       </property>
      </widget>
     </widget>
@@ -271,6 +225,7 @@ background-color:rgb(219,68,55);
 	
 	background-image: url(:/newPrefix/assets/dsc-uit---karachi-logo-x1 (1).png);
 	background-color: rgb(255, 255, 255,40);
+	background-image: url(:/newPrefix/dsc-uit---karachi-logo-x1 (1).png);
 	border-radius:15px;
 }
 </string>
@@ -322,7 +277,6 @@ background-color:rgb(219,68,55);
     </property>
     <addaction name="actionWarnings"/>
     <addaction name="actionGitHub_Code"/>
-    <addaction name="actionGet_the_Software"/>
    </widget>
    <addaction name="menuDeveloped_By"/>
    <addaction name="menuWarnings"/>
@@ -330,7 +284,7 @@ background-color:rgb(219,68,55);
   <action name="actionRaheel_Siddiqui">
    <property name="icon">
     <iconset resource="pics.qrc">
-     <normaloff>:/newPrefix/assets/person.png</normaloff>:/newPrefix/assets/person.png</iconset>
+     <normaloff>:/newPrefix/person.png</normaloff>:/newPrefix/person.png</iconset>
    </property>
    <property name="text">
     <string>Raheel Siddiqui</string>
@@ -339,7 +293,7 @@ background-color:rgb(219,68,55);
   <action name="actionWarnings">
    <property name="icon">
     <iconset resource="pics.qrc">
-     <normaloff>:/newPrefix/assets/gg.png</normaloff>:/newPrefix/assets/gg.png</iconset>
+     <normaloff>:/newPrefix/gg.png</normaloff>:/newPrefix/gg.png</iconset>
    </property>
    <property name="text">
     <string>Warnings!</string>
@@ -348,7 +302,7 @@ background-color:rgb(219,68,55);
   <action name="actionGitHub_Code">
    <property name="icon">
     <iconset resource="pics.qrc">
-     <normaloff>:/newPrefix/assets/Octocat.png</normaloff>:/newPrefix/assets/Octocat.png</iconset>
+     <normaloff>:/newPrefix/Octocat.png</normaloff>:/newPrefix/Octocat.png</iconset>
    </property>
    <property name="text">
     <string>GitHub Code</string>
@@ -356,7 +310,7 @@ background-color:rgb(219,68,55);
   </action>
   <action name="actionGet_the_Software">
    <property name="icon">
-    <iconset resource="pics.qrc">
+    <iconset>
      <normaloff>:/newPrefix/assets/gg.png</normaloff>:/newPrefix/assets/gg.png</iconset>
    </property>
    <property name="text">
