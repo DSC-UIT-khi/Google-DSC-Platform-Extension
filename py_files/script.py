@@ -116,26 +116,3 @@ class dsc_bot:
 		drft_btn = bot.find_element_by_xpath("/html/body/div[1]/div/div/div/div[3]/div/div/div/div/div/div[1]/div[1]/div/div/div[2]/div/div[2]")
 		drft_btn.click()
 		time.sleep(2)
-
-
-
-
-'''uni_link = "https://dsc.community.dev/usman-institute-of-technology/"  		#Enter you community link here
-#email = "youremailaddress"    												#Enter your email address here
-#pas = "your password here"  												#Enter your password here 
-												
-info = (open("secret.txt","r").read()).split('\n')
-email =info[0]
-pas = info[1]
-uni_link=info[2]
-
-
-data = pd.read_csv("data2.csv")
-f_name = data["First Name"]
-l_name = data["Last Name"]
-eemail = data["Email"]
-
-
-obj = dsc_bot()
-obj.login(uni_link,email,pas)
-obj.start(f_name,l_name,eemail)'''
