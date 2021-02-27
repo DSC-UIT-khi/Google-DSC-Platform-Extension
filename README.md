@@ -19,3 +19,5 @@ The extension is developed by [Raheel Siddiqui](https://github.com/rawheel) with
 ### Limitations
 1) It is assumed that an account having extension other than gmail is being used. (e.g XXXX@student.uet.edu.pk)
 2) Only a person with Lead role is able to add the CSV file to event.
+3) Try adding attendees in small batches (e.g. 50).
+4) It only adds attendees to the top most event in any selected category.
