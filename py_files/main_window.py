@@ -221,7 +221,7 @@ class Ui_MainWindow(object):
         webbrowser.open("https://github.com/DSC-UIT-khi/Google-DSC-Platform-Extension")
 
     def get_software(self):
-        webbrowser.open("https://drive.google.com/drive/folders/1A4LPBtP_gRaumanvV5p_oIDUvbsTDw0i?usp=sharing")
+        webbrowser.open("https://github.com/DSC-UIT-khi/Google-DSC-Platform-Extension")
 
     def Start(self):
         if len(self.lineEdit.text())==0:
@@ -266,7 +266,7 @@ class Ui_MainWindow(object):
                 def run_bot(f_name,l_name,eemail,event_sel,uni_link,email,pas):
                     obj = dsc_bot()
                     obj.login(uni_link,email,pas)
-                    obj.start(f_name,l_name,eemail,event_sel)
+                    obj.start(f_name,l_name,eemail,event_sel,uni_link)
                 lstt = []
                 while True:
                     

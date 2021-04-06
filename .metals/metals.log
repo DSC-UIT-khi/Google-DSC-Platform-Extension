@@ -1,0 +1,5 @@
+[0m2021.04.06 23:03:37 INFO  Started: Metals version 0.10.0 in workspace 'C:\Users\Raheel\Desktop\Google-DSC-Platform-Extension' for client vscode 1.55.0.[0m
+[0m2021.04.06 23:03:41 INFO  time: initialize in 3.3s[0m
+[0m2021.04.06 23:03:43 WARN  Build server is not auto-connectable.[0m
+[0m2021.04.06 23:03:43 WARN  no build tool detected in workspace 'C:\Users\Raheel\Desktop\Google-DSC-Platform-Extension'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. [0m
+[0m2021.04.07 01:04:10 INFO  shutting down Metals[0m

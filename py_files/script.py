@@ -22,8 +22,11 @@ class dsc_bot:
 	def login(self,uni_link,email,pas):
 		bot = self.bot
 
-		bot.get('https://dsc.community.dev/accounts/dashboard/')
-		time.sleep(2)
+		bot.get(uni_link)
+		time.sleep(4)
+		#bot.implicitly_wait(4)
+		login_btn = bot.find_element_by_xpath("/html/body/header/div[1]/div/div[2]/ul/li[5]/a")
+		login_btn.click()
 		'''try:
 			login_btn = bot.find_element_by_xpath("/html/body/header/div[1]/div/div[2]/ul/li[5]/a")
 			login_btn.click()
@@ -33,28 +36,49 @@ class dsc_bot:
 
 		email_in = bot.find_element_by_xpath("/html/body/div[1]/div[1]/div[2]/div/div[2]/div/div/div[2]/div/div[1]/div/form/span/section/div/div/div[1]/div/div[1]/div/div[1]/input")
 		email_in.send_keys(email)
-		nxt_btn = bot.find_element_by_xpath("/html/body/div[1]/div[1]/div[2]/div/div[2]/div/div/div[2]/div/div[2]/div/div[1]/div/div/button/div[2]")
-		nxt_btn.click()
+		#nxt_btn = bot.find_element_by_xpath("/html/body/div[1]/div[1]/div[2]/div/div[2]/div/div/div[2]/div/div[2]/div/div[1]/div/div/button/div[2]")
+		#nxt_btn.click()
+
+		time.sleep(1)
+		email_in.send_keys(Keys.ENTER)
+		
+		
 		#keyboard.send('enter', do_press=True, do_release=True)
 		time.sleep(4)
+		#bot.implicitly_wait(4)
 		pas_in = bot.find_element_by_xpath("/html/body/div[1]/div[1]/div[2]/div/div[2]/div/div/div[2]/div/div[1]/div/form/span/section/div/div/div[1]/div[1]/div/div/div/div/div[1]/div/div[1]/input")
 		pas_in.send_keys(pas)
-		nxt1_btn = bot.find_element_by_xpath("/html/body/div[1]/div[1]/div[2]/div/div[2]/div/div/div[2]/div/div[2]/div/div[1]/div/div/button/div[2]")
-		nxt1_btn.click()
+		time.sleep(1)
+		pas_in.send_keys(Keys.ENTER)
+		#nxt1_btn = bot.find_element_by_xpath("/html/body/div[1]/div[1]/div[2]/div/div[2]/div/div/div[2]/div/div[2]/div/div[1]/div/div/button/div[2]")
+		#nxt1_btn.click()
 		#keyboard.send('enter', do_press=True, do_release=True)
 		time.sleep(4)
-	def start(self,f_name,l_name,eemail,event_sel):
+		#bot.implicitly_wait(4)
+	def start(self,f_name,l_name,eemail,event_sel,uni_link):
 		bot = self.bot
+		bot.get('https://www.google.com/')
+		#bot.implicitly_wait(4)
+		time.sleep(4)
 		#bot.get('https://dsc.community.dev/accounts/dashboard/#/chapter-194/event-8554/manage')
-		bot.get(event_sel)
+		#bot.get('https://dsc.community.dev/accounts/dashboard/')
+		#time.sleep(5)
 		#dash_btn = bot.find_element_by_xpath("/html/body/nav/div/div[2]/ul /li[6]/a")
 		#dash_btn.click()
-		#time.sleep(7)
+		#time.sleep(30)
 		#bot.get('https://dsc.community.dev/accounts/dashboard/#/chapter-194/event-8554/manage')
-		bot.get('https://dsc.community.dev/accounts/dashboard/')
-		time.sleep(1)
-		print('running')
+		#bot.get('https://dsc.community.dev/accounts/dashboard/')
+		#time.sleep(10)
+		#bot.implicitly_wait(5)
+		
 		bot.get(event_sel)
+		time.sleep(25)
+		bot.get(event_sel)
+		time.sleep(10)
+
+		#bot.implicitly_wait(10)
+		print('running')
+		#bot.get(event_sel)
 		#bot.get(event_sel)
 		#time.sleep(7)
 		try:
