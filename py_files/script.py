@@ -9,7 +9,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtWidgets import QMessageBox
 class dsc_bot:
 	def __init__(self):
-		self.bot = webdriver.Chrome("chromedriver.exe")
+		self.bot = webdriver.Chrome(executable_path=r'chromedriver.exe')
 
 	def message(self,message):
 
@@ -23,50 +23,55 @@ class dsc_bot:
 		bot = self.bot
 
 		bot.get(uni_link)
-		time.sleep(2)
+		time.sleep(4)
+		#bot.implicitly_wait(4)
 		login_btn = bot.find_element_by_xpath("/html/body/header/div[1]/div/div[2]/ul/li[5]/a")
 		login_btn.click()
-		time.sleep(2)
+
 
 		email_in = bot.find_element_by_xpath("/html/body/div[1]/div[1]/div[2]/div/div[2]/div/div/div[2]/div/div[1]/div/form/span/section/div/div/div[1]/div/div[1]/div/div[1]/input")
 		email_in.send_keys(email)
-		nxt_btn = bot.find_element_by_xpath("/html/body/div[1]/div[1]/div[2]/div/div[2]/div/div/div[2]/div/div[2]/div/div[1]/div/div/button/div[2]")
-		nxt_btn.click()
-		time.sleep(2)
+		#nxt_btn = bot.find_element_by_xpath("/html/body/div[1]/div[1]/div[2]/div/div[2]/div/div/div[2]/div/div[2]/div/div[1]/div/div/button/div[2]")
+		#nxt_btn.click()
+
+		time.sleep(1)
+		email_in.send_keys(Keys.ENTER)
+		
+		
+		#keyboard.send('enter', do_press=True, do_release=True)
+		time.sleep(4)
+		#bot.implicitly_wait(4)
 		pas_in = bot.find_element_by_xpath("/html/body/div[1]/div[1]/div[2]/div/div[2]/div/div/div[2]/div/div[1]/div/form/span/section/div/div/div[1]/div[1]/div/div/div/div/div[1]/div/div[1]/input")
 		pas_in.send_keys(pas)
-		nxt1_btn = bot.find_element_by_xpath("/html/body/div[1]/div[1]/div[2]/div/div[2]/div/div/div[2]/div/div[2]/div/div[1]/div/div/button/div[2]")
-		nxt1_btn.click()
+		time.sleep(1)
+		pas_in.send_keys(Keys.ENTER)
+		#nxt1_btn = bot.find_element_by_xpath("/html/body/div[1]/div[1]/div[2]/div/div[2]/div/div/div[2]/div/div[2]/div/div[1]/div/div/button/div[2]")
+		#nxt1_btn.click()
+		#keyboard.send('enter', do_press=True, do_release=True)
 		time.sleep(4)
-	def start(self,f_name,l_name,eemail,event_sel):
+		#bot.implicitly_wait(4)
+	def start(self,f_name,l_name,eemail,event_sel,uni_link):
 		bot = self.bot
-		dash_btn = bot.find_element_by_xpath("/html/body/nav/div/div[2]/ul/li[6]/a")
-		dash_btn.click()
-		time.sleep(20)
+		bot.get('https://www.google.com/')
+		#bot.implicitly_wait(4)
+		time.sleep(4)
+
+		
+		bot.get(event_sel)
+		time.sleep(25)
+		bot.get(event_sel)
+		time.sleep(10)
+
+
 		try:
-
-			if event_sel == "Completed":
-
-
-				comp_btn = bot.find_element_by_xpath("/html/body/div[1]/div/div/div/div[3]/div/div/div/div/div/div[1]/div[1]/div/div/div[2]/div/div[3]")
-				comp_btn.click()
-
-			elif event_sel == "Draft":
-				drft_btn = bot.find_element_by_xpath("/html/body/div[1]/div/div/div/div[3]/div/div/div/div/div/div[1]/div[1]/div/div/div[2]/div/div[2]")
-				drft_btn.click()
-			else:
-				pass
-
-
-			time.sleep(2)
-
-
-			evnt_btn = bot.find_element_by_xpath("/html/body/div[1]/div/div/div/div[3]/div/div/div/div/div/div[2]/div/div/div[2]")
-			evnt_btn.click()
-			time.sleep(2)
+			
 			count = 1
+
+
+			
 			for f_name,l_name,eemail in zip(f_name,l_name,eemail):
-				#print(name)
+
+
 				
 				add_btn = bot.find_element_by_xpath("/html/body/div[1]/div/div/div/div[3]/div/div/div/div/div/div[2]/div/div/div[2]/div/div[1]/div/div/a")
 				add_btn.click()
@@ -106,36 +111,17 @@ class dsc_bot:
 				#add_att.click()
 				time.sleep(2)
 				count +=1
+
+				
 			save_btn =bot.find_element_by_xpath("/html/body/div[1]/div/div/div/div[3]/div/div/div/div/div/div[2]/div/div/div[2]/div/div[1]/button")
 			save_btn.click()
 			time.sleep(2)
+
 		except:
-			self.message(f'Check Internet Connection or if there is event created in {event_sel}')
+			
+			self.message(f'Check Internet Connection or if there is event created at {event_sel}')
 
 	def draft(self):
 		drft_btn = bot.find_element_by_xpath("/html/body/div[1]/div/div/div/div[3]/div/div/div/div/div/div[1]/div[1]/div/div/div[2]/div/div[2]")
 		drft_btn.click()
 		time.sleep(2)
-
-
-
-
-'''uni_link = "https://dsc.community.dev/usman-institute-of-technology/"  		#Enter you community link here
-#email = "youremailaddress"    												#Enter your email address here
-#pas = "your password here"  												#Enter your password here 
-												
-info = (open("secret.txt","r").read()).split('\n')
-email =info[0]
-pas = info[1]
-uni_link=info[2]
-
-
-data = pd.read_csv("data2.csv")
-f_name = data["First Name"]
-l_name = data["Last Name"]
-eemail = data["Email"]
-
-
-obj = dsc_bot()
-obj.login(uni_link,email,pas)
-obj.start(f_name,l_name,eemail)'''
