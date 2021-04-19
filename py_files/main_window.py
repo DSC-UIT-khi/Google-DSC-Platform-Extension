@@ -229,7 +229,7 @@ class Ui_MainWindow(object):
         else:
             
             event_sel = self.lineEdit_2.text()
-            print(event_sel,"hellllpopppppooo")
+         
 
         info = (open("py_files/secret_info.txt","r").read()).split(' ')
         email =info[0]
@@ -257,8 +257,8 @@ class Ui_MainWindow(object):
             lower_limit = 0
             upper_limit= 70
             count = 1
-            print(len(data))
-            if len(data) < 400:
+        
+            if len(data) < 250:
 
                 
                 
@@ -267,36 +267,18 @@ class Ui_MainWindow(object):
                     obj = dsc_bot()
                     obj.login(uni_link,email,pas)
                     obj.start(f_name,l_name,eemail,event_sel,uni_link)
-                lstt = []
-                while True:
-                    
-                    f_name = data['first name'][lower_limit:upper_limit]
-                    l_name = data['last name'][lower_limit:upper_limit]
-                    eemail = data['email'][lower_limit:upper_limit]
-                    
-                    print(f_name,l_name,eemail)
-                    lower_limit = upper_limit
-                    upper_limit+=70
-                    
-                    if len(f_name) ==0:
-                        break
-                    else:
-                        import threading
-                        import time
-                        t1 = threading.Thread(target = run_bot,args = [f_name,l_name,eemail,event_sel,uni_link,email,pas])
-                        t1.start()
-                        lstt.append(t1)
-                for thread in lstt:
-                    thread.join()
 
+                f_name = data['first name'][lower_limit:upper_limit]
+                l_name = data['last name'][lower_limit:upper_limit]
+                eemail = data['email'][lower_limit:upper_limit]
 
-
-                        #run_bot(f_name,l_name,eemail,event_sel,uni_link,email,pas)
+                run_bot(f_name,l_name,eemail,event_sel,uni_link,email,pas)
+    
 
                     
 
             else:
-                self.message("Make sure your data length is less than 400!")
+                self.message("Make sure your data length is less than 250!")
 
         except Exception as e:
             print(e,"report this error to GitHub repo")

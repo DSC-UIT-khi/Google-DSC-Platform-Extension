@@ -211,7 +211,7 @@ class Ui_MainWindow(object):
         webbrowser.open("https://github.com/DSC-UIT-khi/Get-DSC-Platform-Extension")
 
     def get_software(self):
-        webbrowser.open("https://drive.google.com/drive/folders/1A4LPBtP_gRaumanvV5p_oIDUvbsTDw0i?usp=sharing")
+        webbrowser.open("https://github.com/DSC-UIT-khi/Google-DSC-Platform-Extension")
 
     def Login(self):
         self.email = self.lineEdit.text()

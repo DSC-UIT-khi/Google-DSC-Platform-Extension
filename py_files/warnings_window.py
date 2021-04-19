@@ -150,7 +150,7 @@ class Ui_MainWindow(object):
         
         webbrowser.open("https://www.youtube.com/watch?v=o_ywzBnUCyU&t=4s")
     def get_software(self):
-        webbrowser.open("https://drive.google.com/drive/folders/1A4LPBtP_gRaumanvV5p_oIDUvbsTDw0i?usp=sharing")
+        webbrowser.open("https://github.com/DSC-UIT-khi/Google-DSC-Platform-Extension")
 import pics_rc
 
 
