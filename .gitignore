@@ -1,1 +1,3 @@
 /.vscode
+/__dwnldDrivers/__pycache__
+chromedriver.exe
