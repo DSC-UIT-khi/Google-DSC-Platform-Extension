@@ -231,7 +231,7 @@ background-color:rgb(219,68,55);
 	
 	
 	background-image: url(:/newPrefix/assets/dsc-uit---karachi-logo-x1 (1).png);
-	background-color: rgb(255, 255, 255,40);
+	background-color: rgba(255, 255, 255,40);
 	border-radius:15px;
 }
 </string>
