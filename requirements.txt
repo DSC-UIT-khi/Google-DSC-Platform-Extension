@@ -1,5 +1,0 @@
-pyqt5
-pandas
-numpy
-selenium
-keyboard

@@ -110,7 +110,7 @@ class Ui_MainWindow(object):
 "    \n"
 "    \n"
 "    background-image: url(:/newPrefix/assets/dsc-uit---karachi-logo-x1 (1).png);\n"
-"    background-color: rgb(255, 255, 255,40);\n"
+"    background-color: rgba(255, 255, 255,40);\n"
 "    border-radius:15px;\n"
 "}\n"
 "")
